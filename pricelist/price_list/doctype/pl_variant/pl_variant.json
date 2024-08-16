@@ -20,7 +20,9 @@
   "section_break_hqph",
   "options",
   "section_break_bksx",
-  "offers"
+  "offers",
+  "sudo_category",
+  "sudo_item"
  ],
  "fields": [
   {
@@ -105,7 +107,26 @@
    "fieldname": "category",
    "fieldtype": "Link",
    "label": "Category",
-   "options": "PL Category"
+   "options": "PL Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sudo_category",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "sudo_category_hidden",
+   "no_copy": 1,
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "sudo_item",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "sudo_item_hidden",
+   "no_copy": 1,
+   "print_hide": 1,
+   "report_hide": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -115,7 +136,7 @@
    "link_fieldname": "name"
   }
  ],
- "modified": "2024-08-16 20:58:29.888673",
+ "modified": "2024-08-16 23:18:19.541475",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "PL Variant",

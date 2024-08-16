@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:category_name",
+ "autoname": "field:title",
  "creation": "2024-08-16 14:20:30.680010",
  "default_view": "Tree",
  "doctype": "DocType",
@@ -11,7 +11,7 @@
   "lft",
   "rgt",
   "old_parent",
-  "category_name",
+  "title",
   "thumbnail",
   "parent_pl_category",
   "is_group",
@@ -60,14 +60,6 @@
    "options": "PL Category"
   },
   {
-   "fieldname": "category_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Category Name",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
    "fieldname": "thumbnail",
    "fieldtype": "Attach Image",
    "label": "Thumbnail"
@@ -81,6 +73,14 @@
    "fieldtype": "Table MultiSelect",
    "label": "Offers",
    "options": "PL Offer To DocType"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "force_re_route_to_default_view": 1,
@@ -88,7 +88,7 @@
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-08-16 17:46:53.780582",
+ "modified": "2024-08-16 21:45:16.308020",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "PL Category",
