@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2024-08-16 15:54:21.989430",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "description",
+  "mop",
+  "out_of_stock",
+  "column_break_yevm",
+  "parent_item",
+  "category",
+  "sku",
+  "ean",
+  "upc",
+  "barcode",
+  "section_break_hqph",
+  "options",
+  "section_break_bksx",
+  "offers"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "options",
+   "fieldtype": "Table",
+   "label": "Options",
+   "options": "PL Option"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "No",
+   "fieldname": "out_of_stock",
+   "fieldtype": "Check",
+   "label": "Out Of Stock",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "mop",
+   "fieldtype": "Float",
+   "label": "MOP",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_yevm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sku",
+   "fieldtype": "Data",
+   "label": "SKU"
+  },
+  {
+   "fieldname": "ean",
+   "fieldtype": "Data",
+   "label": "EAN"
+  },
+  {
+   "fieldname": "upc",
+   "fieldtype": "Data",
+   "label": "UPC"
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Barcode",
+   "label": "Barcode"
+  },
+  {
+   "fieldname": "section_break_hqph",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "parent_item",
+   "fieldtype": "Link",
+   "label": "Parent Item",
+   "options": "PL Item"
+  },
+  {
+   "fieldname": "section_break_bksx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "offers",
+   "fieldtype": "Table",
+   "label": "Offers",
+   "options": "PL Offer To DocType"
+  },
+  {
+   "fetch_from": "parent_item.category",
+   "fetch_if_empty": 1,
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "PL Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "PL Offer",
+   "link_fieldname": "name"
+  }
+ ],
+ "modified": "2024-08-16 20:58:29.888673",
+ "modified_by": "Administrator",
+ "module": "Price List",
+ "name": "PL Variant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

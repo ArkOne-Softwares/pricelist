@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:category_name",
+ "creation": "2024-08-16 14:20:30.680010",
+ "default_view": "Tree",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_voyn",
+  "lft",
+  "rgt",
+  "old_parent",
+  "category_name",
+  "thumbnail",
+  "parent_pl_category",
+  "is_group",
+  "section_break_gkoe",
+  "offers"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_voyn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Old Parent",
+   "options": "PL Category"
+  },
+  {
+   "fieldname": "parent_pl_category",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Parent PL Category",
+   "options": "PL Category"
+  },
+  {
+   "fieldname": "category_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Category Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "thumbnail",
+   "fieldtype": "Attach Image",
+   "label": "Thumbnail"
+  },
+  {
+   "fieldname": "section_break_gkoe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "offers",
+   "fieldtype": "Table MultiSelect",
+   "label": "Offers",
+   "options": "PL Offer To DocType"
+  }
+ ],
+ "force_re_route_to_default_view": 1,
+ "image_field": "thumbnail",
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2024-08-16 17:46:53.780582",
+ "modified_by": "Administrator",
+ "module": "Price List",
+ "name": "PL Category",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_pl_category",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_name_in_global_search": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -227,3 +227,5 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+website_route_rules = [{'from_route': '/price-list/<path:app_path>', 'to_route': 'price-list'}, {'from_route': '/pricelist/<path:app_path>', 'to_route': 'pricelist'}, {'from_route': '/pricelist/<path:app_path>', 'to_route': 'pricelist'}, {'from_route': '/pricelist/<path:app_path>', 'to_route': 'pricelist'},]
