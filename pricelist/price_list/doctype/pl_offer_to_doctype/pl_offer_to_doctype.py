@@ -6,4 +6,7 @@ from frappe.model.document import Document
 
 
 class PLOfferToDocType(Document):
-	pass
+	def before_insert(self):
+		print("offer_to_doc_type", self.offer)
+		print("offer_to_doc_type", self.parent)
+		print("offer_to_doc_type", self.parenttype)

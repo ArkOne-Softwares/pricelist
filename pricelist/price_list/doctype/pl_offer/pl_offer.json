@@ -7,8 +7,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "startsat",
-  "endsat",
+  "starts_at",
+  "ends_at",
   "active",
   "column_break_uvwq",
   "segment",
@@ -19,21 +19,10 @@
  ],
  "fields": [
   {
-   "fieldname": "startsat",
-   "fieldtype": "Datetime",
-   "label": "Offer Starts At"
-  },
-  {
-   "fieldname": "endsat",
-   "fieldtype": "Datetime",
-   "label": "Offer Ends At"
-  },
-  {
-   "default": "YES",
+   "default": "1",
    "fieldname": "active",
-   "fieldtype": "Select",
-   "label": "Active",
-   "options": "YES\nNO"
+   "fieldtype": "Check",
+   "label": "Active"
   },
   {
    "fieldname": "column_break_uvwq",
@@ -64,6 +53,16 @@
    "fieldname": "conditions",
    "fieldtype": "Text",
    "label": "Conditions"
+  },
+  {
+   "fieldname": "starts_at",
+   "fieldtype": "Datetime",
+   "label": "Offer Starts At"
+  },
+  {
+   "fieldname": "ends_at",
+   "fieldtype": "Datetime",
+   "label": "Offer Ends At"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -73,7 +72,7 @@
    "link_fieldname": "name"
   }
  ],
- "modified": "2024-08-16 20:25:37.329790",
+ "modified": "2024-08-17 07:01:44.417202",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "PL Offer",

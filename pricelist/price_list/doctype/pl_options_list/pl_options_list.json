@@ -1,26 +1,35 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "prompt",
+ "autoname": "field:title",
  "creation": "2024-08-16 20:22:28.822423",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_jli3"
+  "section_break_jli3",
+  "title"
  ],
  "fields": [
   {
    "fieldname": "section_break_jli3",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-16 20:22:44.950088",
+ "modified": "2024-08-17 08:24:51.742398",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "PL Options List",
- "naming_rule": "Set by user",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -36,6 +45,7 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []

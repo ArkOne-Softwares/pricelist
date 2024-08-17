@@ -19,8 +19,7 @@
    "fieldtype": "Link",
    "label": "Offer",
    "link_filters": "[[\"PL Offer\",\"active\",\"=\",1]]",
-   "options": "PL Offer",
-   "remember_last_selected_value": 1
+   "options": "PL Offer"
   },
   {
    "fetch_from": "offer.value",
@@ -34,22 +33,20 @@
    "fetch_from": "offer.type",
    "fetch_if_empty": 1,
    "fieldname": "type",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Type",
-   "options": "PL Offer Type",
    "read_only": 1
   },
   {
    "fetch_from": "offer.segment",
    "fetch_if_empty": 1,
    "fieldname": "segment",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Segment",
-   "options": "PL Offer Segment",
    "read_only": 1
   },
   {
-   "fetch_from": "offer.startsat",
+   "fetch_from": "offer.starts_at",
    "fetch_if_empty": 1,
    "fieldname": "starts_at",
    "fieldtype": "Datetime",
@@ -57,7 +54,7 @@
    "read_only": 1
   },
   {
-   "fetch_from": "offer.endsat",
+   "fetch_from": "offer.ends_at",
    "fetch_if_empty": 1,
    "fieldname": "ends_at",
    "fieldtype": "Datetime",
@@ -68,7 +65,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-16 18:44:12.326909",
+ "modified": "2024-08-17 07:10:06.274154",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "PL Offer To DocType",
