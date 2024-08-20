@@ -1,15 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="icon" href="/assets/pricelist/frontend/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Price List</title>
-    <script type="module" crossorigin src="/assets/pricelist/frontend/assets/index-C4lLdWeb.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/pricelist/frontend/assets/index-DW_0K8om.css">
+    <title>Frappe UI App</title>
+    <script type="module" crossorigin src="/assets/pricelist/frontend/assets/index.712514a4.js"></script>
+    <link rel="modulepreload" href="/assets/pricelist/frontend/assets/vendor.949cd908.js">
+    <link rel="stylesheet" href="/assets/pricelist/frontend/assets/vendor.21799cd7.css">
+    <link rel="stylesheet" href="/assets/pricelist/frontend/assets/index.257b45b6.css">
   </head>
   <body>
-    <div id="root"></div>
-		<script>window.csrf_token = '{{ frappe.session.csrf_token }}';</script>
+    <div id="app"></div>
+    <div id="modals"></div>
+    <div id="popovers"></div>
+
+    <script>
+      window.csrf_token = '{{ frappe.session.csrf_token }}'
+    </script>
+    
   </body>
 </html>

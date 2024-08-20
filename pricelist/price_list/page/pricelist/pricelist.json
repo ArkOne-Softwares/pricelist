@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2024-08-20 19:07:17.538143",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-08-20 19:07:17.538143",
+ "modified_by": "Administrator",
+ "module": "Price List",
+ "name": "pricelist",
+ "owner": "Administrator",
+ "page_name": "pricelist",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "PriceList"
+}
