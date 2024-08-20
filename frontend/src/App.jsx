@@ -1,7 +1,7 @@
 import { FrappeProvider } from "frappe-react-sdk";
 import Layout from "./component/Layout";
 import { StoreProvider } from "./store";
-import Grid from "./component/Grid";
+import ListVarients from "./component/ListVarients";
 
 export function sessionUser() {
   const cookies = new URLSearchParams(document.cookie.split("; ").join("&"));
@@ -18,7 +18,7 @@ function App() {
       <StoreProvider>
         <FrappeProvider>
           <Layout>
-            <Grid />
+            <ListVarients />
           </Layout>
         </FrappeProvider>
       </StoreProvider>

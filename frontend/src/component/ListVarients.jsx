@@ -1,15 +1,16 @@
 import { useFrappeGetDocList } from "frappe-react-sdk";
-import React from "react";
+import React, { useEffect } from "react";
+import { useStore } from "../store";
 
-export default function ListVarients({ selectedMenuOption }) {
-  console.log("selectedMenuOption", selectedMenuOption);
+export default function ListVarients() {
+  const { state } = useStore();
   const { data, error, isValidating, mutate } = useFrappeGetDocList(
     "PL Variant",
     {
       /** Fields to be fetched - Optional */
       fields: ["name", "title"],
       /** Filters to be applied - SQL AND operation */
-      filters: [["category", "=", selectedMenuOption]],
+      filters: [["category", "=", state.selectedMenuOption]],
       /** Filters to be applied - SQL OR operation */
       // orFilters: [],
       /** Fetch from nth document in filtered and sorted list. Used for pagination  */
@@ -29,14 +30,20 @@ export default function ListVarients({ selectedMenuOption }) {
     }
   );
 
+  useEffect(() => {
+    if (state.selectedMenuOption) {
+      mutate();
+    }
+  }, [state.selectedMenuOption]);
+
   if (isValidating) {
-    return <>Loading</>;
+    return <>Loading Varient</>;
   }
   if (error) {
     return <pre>{JSON.stringify(error)}</pre>;
   }
 
-  console.log("data", data);
+  console.log("data listgvariatn", data);
 
   if (data) {
     return (

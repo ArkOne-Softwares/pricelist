@@ -2,7 +2,7 @@ import { useFrappeGetDocList } from "frappe-react-sdk";
 import React, { useEffect, useState } from "react";
 import { useStore } from "../store";
 
-export default function Sidebar({ selectCategory }) {
+export default function Sidebar() {
   const { state, dispatch } = useStore();
 
   const { data, error, isValidating, mutate } = useFrappeGetDocList(
@@ -36,7 +36,7 @@ export default function Sidebar({ selectCategory }) {
   };
 
   if (isValidating) {
-    return <>Loading</>;
+    return <>Loading Sidebar</>;
   }
   if (error) {
     return <pre>{JSON.stringify(error)}</pre>;
@@ -58,7 +58,11 @@ export default function Sidebar({ selectCategory }) {
               </label>
             ) : (
               <a
-                class="flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700"
+                class={`flex items-center px-3 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700 ${
+                  state.selectedMenuOption === category.name
+                    ? "bg-gray-100 dark:bg-gray-800"
+                    : ""
+                }`}
                 onClick={() => handleMenuClick(category.name)}
               >
                 <svg
