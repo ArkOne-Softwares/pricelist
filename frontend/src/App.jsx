@@ -1,7 +1,7 @@
 import { FrappeProvider } from "frappe-react-sdk";
-import Layout from "./component/Layout";
 import { StoreProvider } from "./store";
 import ListVarients from "./component/ListVarients";
+import Sidebar from "./component/Sidebar";
 
 export function sessionUser() {
   const cookies = new URLSearchParams(document.cookie.split("; ").join("&"));
@@ -16,10 +16,11 @@ function App() {
   return (
     <div className="App">
       <StoreProvider>
-        <FrappeProvider>
-          <Layout>
-            <ListVarients />
-          </Layout>
+        <FrappeProvider enableSocket={false}>
+          <Sidebar />
+        </FrappeProvider>
+        <FrappeProvider enableSocket={false}>
+          <ListVarients />
         </FrappeProvider>
       </StoreProvider>
     </div>

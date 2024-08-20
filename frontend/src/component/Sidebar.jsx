@@ -5,7 +5,7 @@ import { useStore } from "../store";
 export default function Sidebar() {
   const { state, dispatch } = useStore();
 
-  const { data, error, isValidating, mutate } = useFrappeGetDocList(
+  const { data, error, isLoading, mutate } = useFrappeGetDocList(
     "PL Category",
     {
       /** Fields to be fetched - Optional */
@@ -35,7 +35,7 @@ export default function Sidebar() {
     dispatch({ type: "SELECT_MENU_OPTION", payload: option });
   };
 
-  if (isValidating) {
+  if (isLoading) {
     return <>Loading Sidebar</>;
   }
   if (error) {

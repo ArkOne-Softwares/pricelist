@@ -4,7 +4,7 @@ import { useStore } from "../store";
 
 export default function ListVarients() {
   const { state } = useStore();
-  const { data, error, isValidating, mutate } = useFrappeGetDocList(
+  const { data, error, isLoading, mutate } = useFrappeGetDocList(
     "PL Variant",
     {
       /** Fields to be fetched - Optional */
@@ -30,13 +30,13 @@ export default function ListVarients() {
     }
   );
 
-  useEffect(() => {
-    if (state.selectedMenuOption) {
-      mutate();
-    }
-  }, [state.selectedMenuOption]);
+  // useEffect(() => {
+  //   if (state.selectedMenuOption) {
+  //     mutate();
+  //   }
+  // }, [state.selectedMenuOption]);
 
-  if (isValidating) {
+  if (isLoading) {
     return <>Loading Varient</>;
   }
   if (error) {
