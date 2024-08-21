@@ -1,48 +1,4 @@
-import { useFrappeGetDocList } from "frappe-react-sdk";
-import React, { useEffect, useState } from "react";
-import { useStore } from "../store";
-
-export default function Sidebar() {
-  const { state, dispatch } = useStore();
-
-  const { data, error, isLoading, mutate } = useFrappeGetDocList(
-    "PL Category",
-    {
-      /** Fields to be fetched - Optional */
-      fields: ["name", "title", "parent_pl_category", "thumbnail", "is_group"],
-      /** Filters to be applied - SQL AND operation */
-      // filters: [['creation', '>', '2021-10-09']],
-      /** Filters to be applied - SQL OR operation */
-      // orFilters: [],
-      /** Fetch from nth document in filtered and sorted list. Used for pagination  */
-      // limit_start: 5,
-      /** Number of documents to be fetched. Default is 20  */
-      limit: 100,
-      /** Sort results by field and order  */
-      // orderBy: {
-      //     field: 'creation',
-      //     order: 'desc',
-      // },
-      /** Fetch documents as a dictionary */
-      // asDict: false,
-    },
-    {
-      /** SWR Configuration Options - Optional **/
-    }
-  );
-
-  const handleMenuClick = (option) => {
-    dispatch({ type: "SELECT_MENU_OPTION", payload: option });
-  };
-
-  if (isLoading) {
-    return <>Loading Sidebar</>;
-  }
-  if (error) {
-    return <pre>{JSON.stringify(error)}</pre>;
-  }
-
-  const renderCategories = (categories) => {
+const renderCategories = (categories) => {
     const parentCategories = categories.filter((category) => category.is_group);
     const otherCategories = categories.filter(
       (category) => !category.parent_pl_category && !category.is_group
@@ -110,21 +66,3 @@ export default function Sidebar() {
       </>
     );
   };
-
-  return (
-    <>
-      <aside className="flex flex-col w-64 h-screen px-5 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
-        <a href="#">
-          <img
-            className="w-auto h-7"
-            src="https://merakiui.com/images/logo.svg"
-            alt=""
-          />
-        </a>
-        <div className="flex flex-col justify-between flex-1 mt-6">
-          <nav className="-mx-3 space-y-6 ">{renderCategories(data)}</nav>
-        </div>
-      </aside>
-    </>
-  );
-}
