@@ -55,17 +55,29 @@
 </template>
 
 <script setup>
-import { ref,onMounted } from "vue";
-import { createResource, createListResource, ListView, Dialog, ListHeader, ListHeaderItem } from "frappe-ui";
+import { ref, onMounted } from "vue";
+import {
+  createResource,
+  createListResource,
+  ListView,
+  Dialog,
+  ListHeader,
+  ListHeaderItem,
+} from "frappe-ui";
 import { session } from "../data/session";
 
 const columns = ref(["Name", "Title", "Parent Item", "Category"]);
-    const rows = ref([]);
+const rows = ref([]);
 
 onMounted(async () => {
-  var resource = createListResource({
-    doctype: "PL Variant",
-    fields: ["name", "title", "parent_item", "category"],
+  var resource = createResource({
+    url: "pricelist.api.doc.get_data",
+    params: {
+      doctype: "PL Variant",
+      rows: ["*"],
+      page_length: 10,
+    },
+    // fields: ["name", "title", "parent_item", "category", "options"],
   });
 
   const data = await resource.reload();

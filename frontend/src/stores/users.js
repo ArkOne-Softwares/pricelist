@@ -11,7 +11,7 @@ export const usersStore = defineStore('pl-users', () => {
   const router = useRouter()
 
   const users = createResource({
-    url: 'crm.api.session.get_users',
+    url: 'frappe.auth.get_logged_user',
     cache: 'Users',
     initialData: [],
     auto: true,
