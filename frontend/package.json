@@ -12,6 +12,7 @@
     "feather-icons": "^4.28.0",
     "frappe-ui": "^0.1.66",
     "pinia": "^2.2.2",
+    "primevue": "^4.0.4",
     "socket.io-client": "^4.7.5",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3"

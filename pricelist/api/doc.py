@@ -16,10 +16,6 @@ def get_data(
     title_field=None,
     columns=[],
     rows=["*"],
-    kanban_columns=[],
-    kanban_fields=[],
-    view=None,
-    default_filters=None,
 ):
     allData = (
             frappe.db.get_list(

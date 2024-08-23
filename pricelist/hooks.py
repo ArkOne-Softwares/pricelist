@@ -4,6 +4,22 @@ app_publisher = "Arkone Softwares"
 app_description = "Price List App"
 app_email = "arkonesoft@gmail.com"
 app_license = "mit"
+
+app_icon_url = "/assets/gameplan/manifest/favicon-180.png"
+app_icon_title = "Price List"
+app_icon_route = "/pricelist"
+
+add_to_apps_screen = [
+    {
+        "name": "pricelist",
+        "logo": "/assets/pricelist/images/pngegg.png",
+                "title": "Price List",
+                "route": "/pricelist",
+                # "has_permission": "gameplan.api.permission.has_app_permission"
+    }
+]
+
+
 # required_apps = []
 
 # Includes in <head>
@@ -228,4 +244,5 @@ app_license = "mit"
 # }
 
 
-website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/pricelist/<path:app_path>', 'to_route': 'pricelist'}]
+website_route_rules = [{'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'},
+                       {'from_route': '/frontend/<path:app_path>', 'to_route': 'frontend'}, {'from_route': '/pricelist/<path:app_path>', 'to_route': 'pricelist'}]

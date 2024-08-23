@@ -21,7 +21,9 @@ import {
 } from 'frappe-ui'
 import translationPlugin from './translation'
 import { createDialog } from './utils/dialogs'
-import { initSocket } from './socket'
+// import { initSocket } from './socket'
+
+import PrimeVue from 'primevue/config';
 
 let globalComponents = {
   Button,
@@ -49,25 +51,32 @@ for (let key in globalComponents) {
   app.component(key, globalComponents[key])
 }
 
+app.use(PrimeVue, {                  //apply preset
+});
+
 app.config.globalProperties.$dialog = createDialog
 
-let socket
-if (import.meta.env.DEV) {
-  frappeRequest({ url: '/api/method/pricelist.www.pricelist.get_context_for_dev' }).then(
-    (values) => {
-      for (let key in values) {
-        window[key] = values[key]
-      }
-      socket = initSocket()
-      app.config.globalProperties.$socket = socket
-      app.mount('#app')
-    }
-  )
-} else {
-  socket = initSocket()
-  app.config.globalProperties.$socket = socket
-  app.mount('#app')
-}
+// let socket
+// if (import.meta.env.DEV) {
+//   frappeRequest({ url: '/api/method/pricelist.www.pricelist.get_context_for_dev' }).then(
+//     (values) => {
+//       for (let key in values) {
+//         window[key] = values[key]
+//       }
+//       socket = initSocket()
+//       app.config.globalProperties.$socket = socket
+//       app.mount('#app')
+//     }
+//   )
+// } else {
+//   socket = initSocket()
+//   app.config.globalProperties.$socket = socket
+//   app.mount('#app')
+// }
+
+app.config.globalProperties.$socket = null
+app.mount('#app')
+
 
 if (import.meta.env.DEV) {
   window.$dialog = createDialog
