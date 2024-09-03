@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"rmpbTCzIop\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Price List Pro</span>\",\"col\":12}}]",
+ "content": "[{\"id\":\"rmpbTCzIop\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Price List Pro</span>\",\"col\":12}},{\"id\":\"mRvSOxXIj1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Product List\",\"col\":3}}]",
  "creation": "2024-08-23 23:41:09.053783",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Price List Pro",
  "links": [],
- "modified": "2024-08-23 23:42:19.504913",
+ "modified": "2024-08-30 09:33:00.018027",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "Price List Pro",
@@ -24,6 +24,15 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 39.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Product List",
+   "link_to": "PL Variant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
  "title": "Price List Pro"
 }
