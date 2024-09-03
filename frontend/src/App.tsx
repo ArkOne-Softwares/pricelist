@@ -7,13 +7,15 @@ import { useStickyState } from './hooks/useStickyState'
 import { UserProvider } from './utils/auth/UserProvider';
 import { ProtectedRoute } from './utils/auth/ProtectedRoute';
 import { ThemeProvider } from './ThemeProvider';
-
+import MobileTabsPage from './pages/MobileTabsPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<ProtectedRoute />}>
         <Route path="/" element={<MainPage />}>
+          <Route index element={<MobileTabsPage />} />
+          <Route path="list" lazy={() => import('./pages/ListPage')} />
         </Route>
       </Route>
     </>
