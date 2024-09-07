@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Price List</title>
+		<script type="module" crossorigin src="/assets/pricelist/frontend/assets/index-NyHVnm0H.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/pricelist/frontend/assets/index-CybtU96t.css">
+	</head>
+	<body>
+		<div id="root" vaul-drawer-wrapper="true"></div>
+		<script>
+			window.csrf_token = '{{ frappe.session.csrf_token }}';
+			      if (!window.frappe) window.frappe = {};
+			window.app_name = "{{ app_name }}";
+			frappe.boot = JSON.parse({{ boot }});
+		</script>
+	</body>
+</html>
