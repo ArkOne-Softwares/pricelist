@@ -16,6 +16,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<MainPage />}>
           <Route index element={<MobileTabsPage />} />
           <Route path="list" lazy={() => import('./pages/ListPage')} />
+          <Route path="category/:name" lazy={() => import('./pages/ListPage')} />
         </Route>
       </Route>
     </>
@@ -40,7 +41,6 @@ function App() {
       return window.frappe?.boot?.sitename ?? import.meta.env.VITE_SITE_NAME
     }
     return import.meta.env.VITE_SITE_NAME
-
   }
 
   return (

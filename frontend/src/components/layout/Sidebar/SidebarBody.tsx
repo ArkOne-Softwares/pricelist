@@ -3,18 +3,28 @@ import React from 'react'
 import { BiMessageAltDetail } from 'react-icons/bi'
 import { LuBookmark } from 'react-icons/lu'
 import { SidebarItem } from './SidebarComp'
+import { useFrappeGetCall } from 'frappe-react-sdk'
+import { List } from '@/pages/ListPage'
 
 
 export const SidebarBody = () => {
+
+    const { data: categories, error: categoryError } = useFrappeGetCall<{ message: List[] }>("pricelist.api.doc.get_category", {
+        revalidateOnFocus: false
+    })
+
     return (
         <ScrollArea type="hover" scrollbars="vertical" className='h-[calc(100vh-7rem)]'>
             <Flex direction='column' gap='2' className='overflow-x-hidden pb-12 sm:pb-0' px='2'>
                 <Flex direction='column' gap='1' className='pb-0.5'>
-                    <SidebarItemForPage
-                        to={'threads'}
-                        label='Threads'
-                        icon={<BiMessageAltDetail className='text-gray-12 dark:text-gray-300 mt-1 sm:text-sm text-base' />}
-                        iconLabel='Threads' />
+                    {categories?.message.map((cat) => (
+                        <SidebarItemForPage
+                            key={cat.name}
+                            to={'category/' + cat.name}
+                            label={cat.name}
+                            icon={<BiMessageAltDetail className='text-gray-12 dark:text-gray-300 mt-1 sm:text-sm text-base' />}
+                            iconLabel='Threads' />
+                    ))}
                     <SidebarItemForPage
                         to={'saved-messages'}
                         label='Saved'

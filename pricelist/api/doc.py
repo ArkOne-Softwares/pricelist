@@ -7,8 +7,8 @@ from frappe.model import no_value_fields
 
 @frappe.whitelist()
 def get_data(
-    filters: dict = None,
-    or_filters: dict = None,
+    filters: str = None,
+    or_filters: str = None,
     order_by: str = None,
     page_length=20,
     page_length_count=20,
@@ -17,6 +17,20 @@ def get_data(
     columns=[],
     rows=["*"],
 ):
+
+    if filters:
+        try:
+            filters = json.loads(filters)
+        except json.JSONDecodeError:
+            frappe.throw(
+                "Invalid filters format. It should be a valid JSON string representing a dictionary.")
+    if or_filters:
+        try:
+            or_filters = json.loads(or_filters)
+        except json.JSONDecodeError:
+            frappe.throw(
+                "Invalid or_filters format. It should be a valid JSON string representing a dictionary.")
+
     allData = (
         frappe.db.get_list(
             'PL Variant',
@@ -29,12 +43,21 @@ def get_data(
         or []
     )
 
-    return allData
+    # Loop and get the data from child tables
+    mergedData = []
+    for data in allData:
+        # Get the child table data
+        mergedData.append(frappe.get_doc(
+            'PL Variant',
+            data['name']
+        ).as_dict())
+
+    return mergedData
 
 
 @frappe.whitelist()
 def get_category(
-    filters: dict = None,
+    filters: str = None,
     or_filters: dict = None,
     order_by: str = None,
     page_length=20,
@@ -44,6 +67,14 @@ def get_category(
     columns=[],
     rows=["*"],
 ):
+
+    if filters:
+        try:
+            filters = json.loads(filters)
+        except json.JSONDecodeError:
+            frappe.throw(
+                "Invalid filters format. It should be a valid JSON string representing a dictionary.")
+
     allData = (
         frappe.db.get_list(
             'PL Category',

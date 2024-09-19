@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"rmpbTCzIop\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Price List Pro</span>\",\"col\":12}},{\"id\":\"mRvSOxXIj1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Product List\",\"col\":3}}]",
+ "content": "[{\"id\":\"rmpbTCzIop\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Price List Pro</span>\",\"col\":12}},{\"id\":\"mRvSOxXIj1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Product List\",\"col\":3}},{\"id\":\"jiDVFwkofl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Categories\",\"col\":3}},{\"id\":\"zvYuo-puYQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Offers\",\"col\":3}}]",
  "creation": "2024-08-23 23:41:09.053783",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Price List Pro",
  "links": [],
- "modified": "2024-08-30 09:33:00.018027",
+ "modified": "2024-09-19 17:39:07.642437",
  "modified_by": "Administrator",
  "module": "Price List",
  "name": "Price List Pro",
@@ -28,8 +28,24 @@
   {
    "color": "Green",
    "doc_view": "List",
+   "label": "Categories",
+   "link_to": "PL Category",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
    "label": "Product List",
    "link_to": "PL Variant",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Offers",
+   "link_to": "PL Offer",
    "stats_filter": "[]",
    "type": "DocType"
   }
