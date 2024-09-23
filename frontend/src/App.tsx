@@ -17,6 +17,7 @@ const router = createBrowserRouter(
           <Route index element={<MobileTabsPage />} />
           <Route path="list" lazy={() => import('./pages/ListPage')} />
           <Route path="category/:name" lazy={() => import('./pages/ListPage')} />
+          <Route path="product/:name" lazy={() => import('./pages/ListPage')} />
         </Route>
       </Route>
     </>

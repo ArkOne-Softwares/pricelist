@@ -4,6 +4,7 @@ app_publisher = "Arkone Softwares"
 app_description = "Price List App"
 app_email = "arkonesoft@gmail.com"
 app_license = "mit"
+app_home = "/app/price-list-pro"
 
 app_icon_url = "/assets/gameplan/manifest/favicon-180.png"
 app_icon_title = "Price List"
