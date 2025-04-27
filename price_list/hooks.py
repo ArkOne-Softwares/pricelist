@@ -11,25 +11,24 @@ app_license = "agpl-3.0"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "price_list",
-# 		"logo": "/assets/price_list/logo.png",
-# 		"title": "Price List",
-# 		"route": "/price_list",
-# 		"has_permission": "price_list.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+ 	{
+ 		"name": "price_list",
+ 		"logo": "/assets/price_list/images/price_list_icon_192.png",
+ 		"title": "Mobile Price List",
+ 		"route": "/app/price-list-dashboard",
+ 	}
+]
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/price_list/css/price_list.css"
+app_include_css = "/assets/price_list/css/price_list_dashboard.css"
 # app_include_js = "/assets/price_list/js/price_list.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/price_list/css/price_list.css"
+web_include_css = "/assets/price_list/css/price_list_dashboard.css"
 # web_include_js = "/assets/price_list/js/price_list.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -40,13 +39,16 @@ app_license = "agpl-3.0"
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
 # include js in page
-# page_js = {"page" : "public/js/file.js"}
+page_js = {"price-list-dashboard": "public/js/price_list_dashboard.js"}
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
+# Web application manifest
+web_manifest = "/assets/price_list/manifest/price_list.webmanifest"
 
 # Svg Icons
 # ------------------
@@ -69,18 +71,6 @@ app_license = "agpl-3.0"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
-
-# automatically load and sync documents of this doctype from downstream apps
-# importable_doctypes = [doctype_1]
-
-# Jinja
-# ----------
-
-# add methods and filters to jinja environment
-# jinja = {
-# 	"methods": "price_list.utils.jinja_methods",
-# 	"filters": "price_list.utils.jinja_filters"
-# }
 
 # Installation
 # ------------
@@ -140,34 +130,20 @@ app_license = "agpl-3.0"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+ 	"Item Price": {
+ 		"on_update": "price_list.api.price_list.track_price_change"
+ 	}
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"price_list.tasks.all"
-# 	],
-# 	"daily": [
-# 		"price_list.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"price_list.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"price_list.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"price_list.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+ 	"daily": [
+ 		"price_list.api.price_list.clear_old_price_history"
+ 	]
+}
 
 # Testing
 # -------
@@ -237,11 +213,4 @@ app_license = "agpl-3.0"
 # auth_hooks = [
 # 	"price_list.auth.validate"
 # ]
-
-# Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
-
-# default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
-# }
 
